@@ -30,4 +30,6 @@ jobs:
             npm run build
 
             echo "✅ Despliegue completado en $HOSTNAME"
+            echo "✅ Despliegue completado en $HOSTNAME"
+
 
