@@ -1,91 +1,101 @@
+import { IconBrandReact, IconBrandHtml5, IconBrandCss3, IconBrandJavascript, IconCode } from "@tabler/icons-react";
+
 export default function About() {
-  const titulo = "<¿Quien soy?/>";
+  const titulo = "Sobre mí";
 
   return (
     <section
       id="about"
-      className="relative z-10 flex justify-center bg-[#2E3532]  text-texto lg:h-screen"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#0a0a0a] px-6 py-24 lg:px-12"
     >
-      <div className="my-20 grid w-[80%] lg:mt-[4rem] lg:grid-cols-2">
-        <div className="">
-          <div className="flex flex-col items-center justify-center">
-            <h1 className="text-4xl font-bold md:text-5xl">
-              <span className="text-titulo">{titulo}</span>
-            </h1>
-            <div className="font-medium md:text-xl">
-              <p className="mt-14  ">
-                Soy Josue Perez Eulogio, desarrollador Frontend y estudiante de
-                la Licenciatura en Sistemas Computacionales con mas de 
-                <span className="text-[#63e] mx-1">
+      {/* Luces de fondo para dar profundidad */}
+      <div className="absolute right-0 top-1/2 -z-10 h-96 w-96 rounded-full bg-purple-600/10 blur-[150px]" />
+      
+      <div className="mx-auto grid w-full max-w-screen-xl lg:grid-cols-2 gap-16">
+        
+        {/* Columna Izquierda: Contenido */}
+        <div className="flex flex-col justify-center order-2 lg:order-1">
+          <div className="inline-flex items-center gap-2 mb-6 text-purple-400 font-mono text-sm tracking-widest uppercase">
+            <IconCode size={20} />
+            <span>Formación y Experiencia</span>
+          </div>
 
-                dos años
-                de experiencia 
-                </span>
-                en el desarrollo web, con JavaScript u otros
-                lenguajes y framewords.
-              </p>
-              <p className="my-4">Siempre enfocado en proporcionar 
-              <span className="ml-1 text-[#63e]">
+          <h2 className="text-4xl font-black text-white md:text-6xl mb-8">
+            {titulo}<span className="text-purple-500">.</span>
+          </h2>
 
-              soluciones efectivas.
-              </span>
-              </p>
+          <div className="space-y-6 text-lg text-gray-400 leading-relaxed">
+            <p>
+              Soy <span className="text-white font-bold">Josue Perez Eulogio</span>, 
+              desarrollador Frontend apasionado por crear interfaces que no solo se vean bien, sino que funcionen a la perfección. 
+              Actualmente curso la Licenciatura en Sistemas Computacionales.
+            </p>
+
+            <div className="relative border-l-2 border-purple-500/30 pl-6 py-2">
               <p>
-                Me considero una persona comprometida al aprendizaje continuo y
-                la mejora constante, siempre en busca de oportunidades para
-                aplicar mis conocimientos y hablidades de 
-                <span className="text-[#63e] ml-1">
-
-                manera innovadora.
-                </span>
+                Cuento con más de 
+                <span className="text-white font-bold mx-1 text-xl">dos años de experiencia</span> 
+                transformando ideas en soluciones digitales efectivas, utilizando el ecosistema de JavaScript y frameworks modernos.
               </p>
             </div>
+
+            <p>
+              Mi enfoque está en el <span className="text-purple-300">aprendizaje continuo</span>. 
+              Me considero un eterno estudiante de la tecnología, siempre buscando aplicar nuevas metodologías de manera innovadora 
+              en cada proyecto en el que me involucro.
+            </p>
+          </div>
+
+          {/* Mini Stats o Badges */}
+          <div className="mt-10 flex flex-wrap gap-4">
+             <div className="flex flex-col">
+                <span className="text-2xl font-black text-white">2+</span>
+                <span className="text-xs uppercase text-gray-500 tracking-tighter">Años exp.</span>
+             </div>
+             <div className="h-10 w-[1px] bg-white/10 mx-2"></div>
+             <div className="flex flex-col">
+                <span className="text-2xl font-black text-white">Sistemas</span>
+                <span className="text-xs uppercase text-gray-500 tracking-tighter">Carrera</span>
+             </div>
           </div>
         </div>
 
-        <div className="hidden justify-center pl-20  lg:ml-10 lg:flex lg:items-center">
-          <div className="max-[450px]:flex max-[450px]:justify-end lg:w-[560px]">
-            <div className="max-[450px]:mt-10 max-[450px]:justify-self-end max-[450px]:pr-10 lg:col-span-6 lg:mt-0 lg:flex">
-              <div className="home__img relative">
-                <div className="absolute -right-2 top-14 flex h-16 w-16 items-center justify-center rounded-full bg-[#6793c9] xl:right-4 xl:top-14">
-                  <i className="fa-brands fa-react text-4xl font-semibold text-[#2E3532]"></i>
-                </div>
+        {/* Columna Derecha: Composición Visual */}
+        <div className="relative flex items-center justify-center order-1 lg:order-2">
+          <div className="group relative">
+            {/* El Blob/Imagen principal con marco moderno */}
+            <div className="relative z-10 h-[350px] w-[300px] md:h-[450px] md:w-[400px] overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-transparent p-2 backdrop-blur-sm">
+              <img
+                src="../png.png"
+                alt="Josue Perez"
+                className="h-full w-full rounded-2xl object-cover grayscale transition duration-500 group-hover:grayscale-0"
+              />
+            </div>
 
-                <div className="absolute bottom-0 right-24 flex h-16 w-16 items-center justify-center rounded-full bg-[#6793c9] xl:bottom-0 xl:right-36">
-                  <i className="fa-brands fa-html5 text-4xl font-semibold text-[#2E3532] "></i>
-                </div>
-
-                <div className="absolute flex h-16 w-16 items-center justify-center rounded-full bg-[#6793c9] lg:bottom-10 lg:left-9 xl:bottom-14 xl:left-20">
-                  <i className="fa-brands fa-css3-alt text-4xl font-semibold text-[#2E3532]"></i>
-                </div>
-
-                <div className="absolute flex h-16 w-16 items-center justify-center rounded-full bg-[#6793c9] lg:top-12 xl:left-20 xl:top-10">
-                  <i className="fa-brands fa-js  text-4xl text-[#2E3532]"></i>
-                </div>
-
-                <svg
-                  className="home__blob"
-                  viewBox="0 0 479 467"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <mask id="mask0" mask-type="alpha">
-                    <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
-                  </mask>
-                  <g mask="url(#mask0)">
-                    <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
-                    <image
-                      className="home__blob-img "
-                      x="50"
-                      y="60"
-                      href="../png.png"
-                    />
-                  </g>
-                </svg>
+            {/* Iconos Flotantes con animación */}
+            <div className="absolute -right-6 top-10 z-20 animate-bounce [animation-duration:3s]">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-black/50 text-blue-400 backdrop-blur-xl shadow-xl">
+                <IconBrandReact size={32} />
               </div>
             </div>
+
+            <div className="absolute -left-8 bottom-20 z-20 animate-bounce [animation-duration:4s]">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-black/50 text-yellow-400 backdrop-blur-xl shadow-xl">
+                <IconBrandJavascript size={28} />
+              </div>
+            </div>
+
+            <div className="absolute right-10 -bottom-6 z-20 animate-bounce [animation-duration:5s]">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-black/50 text-orange-500 backdrop-blur-xl shadow-xl">
+                <IconBrandHtml5 size={28} />
+              </div>
+            </div>
+
+            {/* Elemento Decorativo: Círculos */}
+            <div className="absolute -inset-4 -z-10 rounded-[40px] border border-purple-500/20 opacity-50 group-hover:scale-105 transition-transform duration-500"></div>
           </div>
         </div>
+
       </div>
     </section>
   );

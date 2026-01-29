@@ -1,154 +1,131 @@
-import Card from "./Card";
-import {
-  IconBrandCss3,
-  IconBrandHtml5,
-  IconBrandJavascript,
-  IconBrandLaravel,
-  IconBrandMysql,
-  IconBrandNodejs,
-  IconBrandReact,
-  IconBrandTailwind,
-} from "@tabler/icons-react";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
+import { IconBrandGithub, IconExternalLink, IconCode, IconBriefcase } from "@tabler/icons-react";
+
+// Estilos de Swiper
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-coverflow';
 
 export default function Works() {
+  const proyectos = [
+    {
+      title: "Sistema de Laboratorio",
+      description: "CRUD completo para la gestión de análisis clínicos en 'La Piedad'. Incluye reportes automáticos en PDF y manejo de usuarios.",
+      tags: ["Laravel", "Livewire", "PHP"],
+      link: "#",
+      repo: "#",
+      image: "/img/lab-project.png" 
+    },
+    {
+      title: "Altamar Comunicación",
+      description: "Landing page corporativa para servicios de desarrollo y comunicación marítima. Diseño responsivo y estética profesional.",
+      tags: ["React", "Vite", "Tailwind"],
+      link: "https://dasoftwarer.netlify.app/",
+      repo: "#",
+      image: "/work1.png"
+    },
+    {
+      title: "Reparacel Demo",
+      description: "Sistema de gestión para servicios técnicos móviles. Control de inventario, clientes y estados de reparación.",
+      tags: ["React", "Redux", "Node.js"],
+      link: "https://reparacel.netlify.app/",
+      repo: "#",
+      image: "/reparacel.png"
+    }
+  ];
+
   return (
-    <div
-      id="works"
-      className="relative z-10  flex items-center justify-center  pb-20"
-    >
-      <div className="w-11/12 rounded-3xl pb-10" id="work">
-        <h2 className="mb-8 mt-10 text-center text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
-          <span className="text-titulo ">Trabajos</span>
-        </h2>
+    <section id="works" className="relative py-24 px-6 lg:px-12 bg-transparent overflow-hidden">
+      {/* Luces de ambiente detrás del Swiper */}
+      <div className="absolute top-1/2 left-1/2 -z-10 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-600/10 blur-[150px]" />
 
-        <div className=" mt-20 flex w-full items-center justify-center">
-          <div className="grid gap-14 px-3 lg:gap-[2rem] lg:px-0 2xl:grid-cols-2 2xl:gap-[2rem]">
-            <div className="flex w-full  justify-end  lg:-ml-[10rem] 2xl:m-0">
-              <Card
-                url={"../work1.png"}
-                link={"https://dasoftwarer.netlify.app/"}
-                titulo={"D&A Software R"}
-                descripcion={
-                  "Sitio web oficial D&A Software R , creado con HTML, CSS, JS, con PHP y Laravel de base con conexión MySQL para el registro de contactos"
-                }
-                tecnologias={
-                  <>
-                    <span className="mb-2  mr-2 inline-block w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandHtml5 />
-                    </span>
-
-                    <span className="mb-2 mr-2 inline-block w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandCss3 />
-                    </span>
-                    <span className="mb-2 mr-2 inline-block w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandJavascript />
-                    </span>
-                    <span className="mb-2 inline-block  w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandLaravel />
-                    </span>
-                    <span className="mb-2 inline-block  w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandMysql />
-                    </span>
-                  </>
-                }
-              />
-            </div>
-
-            {/* <div className="flex w-full  justify-end lg:ml-20 2xl:m-0">
-              <Card
-                url={"../work2.png"}
-                link={
-                  "https://centro-medico-test.netlify.app/"
-                }
-                titulo={"Sistema Centro Medico Indicencias"}
-                descripcion={
-                  "Sistema web diseñado para la creacion de incidencias en equipos medicos, mas detalles en su sitio oficial."
-                }
-                tecnologias={
-                  <>
-                    <span className="w-fit mb-2 mr-2 inline-block rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandHtml5 />
-                    </span>
-
-                    <span className="w-fit mb-2 mr-2 inline-block rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandCss3 />
-                    </span>
-                    <span className="w-fit mb-2 mr-2 inline-block rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandJavascript />
-                    </span>
-
-                    <span className="w-fit mb-2 mr-2 inline-block rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandNodejs />
-                    </span>
-                    <span className="w-fit mb-2  inline-block rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandMongodb />
-                    </span>
-                  </>
-                }
-              />
-            </div> */}
-
-            <div className="flex w-full  justify-end lg:-ml-16 2xl:m-0">
-              <Card
-                url={"../reparacel.png"}
-                link={"https://reparacel.netlify.app/"}
-                titulo={"Demo Reparacel"}
-                descripcion={
-                  "Demo de sistema diseñado para gestión de equipos móviles , clientes y reparaciones para tener un control y un análisis rápido de los dispositivos para sus respectiva reparación , se utilizo HTML, CSS, JS, REACT, TAILWIND Y REDUX."
-                }
-                tecnologias={
-                  <>
-                    <span className="mb-2 mr-2 inline-block w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandHtml5 />
-                    </span>
-
-                    <span className="mb-2 mr-2 inline-block w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandCss3 />
-                    </span>
-                    <span className="mb-2 mr-2 inline-block w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandJavascript />
-                    </span>
-                    <span className="mb-2 mr-2 inline-block w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandNodejs />
-                    </span>
-                    <span className="mb-2 inline-block  w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandReact />
-                    </span>
-                  </>
-                }
-              />
-            </div>
-
-            <div className="flex w-full  justify-end  lg:ml-[5rem] 2xl:m-0">
-              <Card
-                url={"../landingpagered.png"}
-                link={"https://landingpagered.netlify.app/"}
-                titulo={"Landing Page Red"}
-                descripcion={
-                  "Página web realizada de un diseño proporcionado utilizando HTML, CSS, Tailwind como frameword de CSS Y JS."
-                }
-                tecnologias={
-                  <>
-                    <span className="mb-2  mr-2 inline-block w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandHtml5 />
-                    </span>
-
-                    <span className="mb-2 mr-2 inline-block w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandCss3 />
-                    </span>
-                    <span className="mb-2 mr-2 inline-block w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandJavascript />
-                    </span>
-                    <span className="mb-2 mr-2 inline-block w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                      <IconBrandTailwind />
-                    </span>
-                  </>
-                }
-              />
-            </div>
+      <div className="mx-auto max-w-screen-xl">
+        
+        {/* Encabezado */}
+        <div className="mb-16 text-center lg:text-left">
+          <div className="inline-flex items-center gap-2 mb-4 text-purple-400 font-mono text-sm tracking-widest uppercase">
+            <IconBriefcase size={20} />
+            <span>Portafolio Seleccionado</span>
           </div>
+          <h2 className="text-4xl font-black text-white md:text-6xl">
+            Proyectos <span className="text-purple-500">Recientes</span>
+          </h2>
+          <p className="mt-6 text-gray-400 max-w-xl text-lg">
+            Explora mis trabajos más destacados en desarrollo de software, desde sistemas de gestión clínica hasta landing pages interactivas.
+          </p>
         </div>
+
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+          effect={'coverflow'}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={'auto'}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+            slideShadows: false,
+          }}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 30 },
+            1024: { slidesPerView: 3, spaceBetween: 40 },
+          }}
+          className="!pb-16"
+        >
+          {proyectos.map((proyect, index) => (
+            <SwiperSlide key={index} className="max-w-[400px]">
+              <div id="card" className="group flex h-full flex-col overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:border-purple-500/50">
+                
+                {/* Contenedor Imagen con Zoom */}
+                <div className="relative aspect-video overflow-hidden">
+                  <img 
+                    src={proyect.image} 
+                    alt={proyect.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <a href={proyect.repo} className="rounded-full bg-white/10 p-3 text-white backdrop-blur-md hover:bg-purple-600 transition-all hover:scale-110">
+                      <IconBrandGithub size={24} />
+                    </a>
+                    <a href={proyect.link} className="rounded-full bg-white/10 p-3 text-white backdrop-blur-md hover:bg-purple-600 transition-all hover:scale-110">
+                      <IconExternalLink size={24} />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Contenido de la Card */}
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {proyect.tags.map(tag => (
+                      <span key={tag} className="rounded-md bg-purple-500/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-purple-400 border border-purple-500/20">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="mb-3 text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                    {proyect.title}
+                  </h3>
+                  <p className="mb-6 flex-1 text-sm leading-relaxed text-gray-400">
+                    {proyect.description}
+                  </p>
+                  <div className="flex items-center gap-2 border-t border-white/10 pt-4 text-xs font-bold tracking-widest text-white/50 group-hover:text-white transition-colors">
+                    <IconCode size={16} className="text-purple-500" />
+                    DETALLES DEL PROYECTO
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    </div>
+    </section>
   );
 }

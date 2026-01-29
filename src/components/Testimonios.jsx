@@ -1,96 +1,92 @@
-// Import Swiper styles
-import "../css/swiper.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { IconQuote } from "@tabler/icons-react"; // Usando Tabler Icons para consistencia
+
+// Estilos de Swiper
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useRef } from "react";
-// import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 export default function Testimonios() {
+  const testimoniosData = [
+    {
+      nombre: "Arnold Morales",
+      puesto: "Ing. Ciberseguridad",
+      texto: "Excelente trabajo, demostró gran dominio técnico y profesionalismo en el desarrollo del proyecto.",
+      avatar: "AM"
+    },
+    {
+      nombre: "Eduardo",
+      puesto: "Ing. Ciberseguridad",
+      texto: "Muy buen trabajo. La atención al detalle en la interfaz y la funcionalidad fue impecable.",
+      avatar: "E"
+    }
+  ];
+
   return (
-    <section id="testimonios" className="relative z-10 py-[10rem]">
-      <div className=" bg-[#243856] dark:bg-gray-900">
-        <Swiper
-          spaceBetween={30}
-          centeredSlides={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <div className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:px-6 lg:py-16">
-              <figure className="mx-auto max-w-screen-md">
-                <svg
-                  className="mx-auto mb-3 h-12 text-titulo dark:text-gray-600"
-                  viewBox="0 0 24 27"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+    <section id="testimonios" className="relative z-10 py-24 px-6 overflow-hidden">
+      {/* Luz ambiental de fondo */}
+      <div className="absolute top-1/2 left-1/2 -z-10 h-[300px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
+      
+      <div className="mx-auto max-w-screen-xl">
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-black text-white md:text-5xl">
+            Referencias <span className="text-purple-500 text-6xl">.</span>
+          </h2>
+        </div>
+
+        <div className="mx-auto max-w-screen-md">
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="mySwiper !pb-14"
+          >
+            {testimoniosData.map((testimonio, index) => (
+              <SwiperSlide key={index}>
+                <div 
+                  id="card" 
+                  className="mx-4 mb-8 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-12"
                 >
-                  <path
-                    d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <blockquote>
-                  <p className="text-2xl font-medium text-texto">
-                    "Excelente trabajo."
-                  </p>
-                </blockquote>
-                <figcaption className="mt-6 flex items-center justify-center space-x-3">
-                  <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                    <div className="pr-3 font-medium text-[#6793c9] dark:text-white">
-                      Arnold Morales
-                    </div>
-                    <div className="pl-3 text-sm font-light text-texto dark:text-gray-400">
-                      Ing. Ciberseguridad
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:px-6 lg:py-16">
-              <figure className="mx-auto max-w-screen-md">
-                <svg
-                  className="mx-auto mb-3 h-12 text-titulo dark:text-gray-600"
-                  viewBox="0 0 24 27"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <blockquote>
-                  <p className="text-2xl font-medium text-texto">
-                    "Muy buen trabajo."
-                  </p>
-                </blockquote>
-                <figcaption className="mt-6 flex items-center justify-center space-x-3">
-                  <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                    <div className="pr-3 font-medium text-[#6793c9] dark:text-white">
-                      Eduardo
-                    </div>
-                    <div className="pl-3 text-sm font-light text-texto dark:text-gray-400">
-                      Ing. Ciberseguridad
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+                  <figure className="text-center">
+                    <IconQuote 
+                      size={48} 
+                      className="mx-auto mb-6 text-purple-500 opacity-50" 
+                    />
+                    <blockquote>
+                      <p className="text-xl font-medium leading-relaxed text-gray-200 md:text-2xl">
+                        "{testimonio.texto}"
+                      </p>
+                    </blockquote>
+                    <figcaption className="mt-10 flex flex-col items-center justify-center gap-4">
+                      {/* Avatar representativo */}
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 font-bold text-white shadow-lg">
+                        {testimonio.avatar}
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <cite className="not-italic font-bold text-white text-lg">
+                          {testimonio.nombre}
+                        </cite>
+                        <span className="text-sm font-medium tracking-widest text-purple-400 uppercase">
+                          {testimonio.puesto}
+                        </span>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );

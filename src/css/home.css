@@ -1,81 +1,107 @@
 @import url("https://fonts.cdnfonts.com/css/helvetica-neue-55");
 
+:root {
+  --bg-dark: #030712; /* Un negro azulado muy profundo */
+  --accent-purple: #6366f1;
+  --accent-blue: #3b82f6;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg-dark);
 }
 
-.home__img {
-  width: 560px;
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #f3f4f6;
+  overflow-x: hidden;
 }
 
-.home__blob {
-  fill: #243856;
-}
-
-.home__blob-img {
-  width: 320px;
-}
-
-@media screen and (max-width: 450px) {
-  .home__img {
-    width: 230px;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .home__img {
-    width: 330px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .home__img {
-    width: 430px;
-  }
-}
-
-@media screen and (max-width: 1284px) {
-  .home__img {
-    width: 400px;
-  }
-}
-
+/* --- Global Section Backgrounds --- */
+/* Eliminamos los gradientes pesados por un fondo unificado y elegante */
+#hero,
 #about,
 #skills,
 #contact,
 #footer,
 #works,
-#hero1,
-#testimonios,
-#testimonios1 {
-  background: #141e30; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #243b55,
-    #141e30
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #243b55,
-    #141e30
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+#testimonios {
+  background-color: var(--bg-dark);
+  position: relative;
 }
 
-#work{
-  background: #536976; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #292e49,
-    #536976
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #292e49,
-    #536976
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* --- Animaciones Personalizadas --- */
+@keyframes gradient-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient-flow 8s linear infinite;
+}
+
+/* --- Estilos para la Imagen (About/Hero) --- */
+.home__img {
+  width: 100%;
+  max-width: 500px;
+  filter: drop-shadow(0 20px 50px rgba(99, 102, 241, 0.2));
+  transition: transform 0.5s ease;
+}
+
+.home__img:hover {
+  transform: translateY(-10px);
+}
+
+/* --- Tarjetas con Efecto Glassmorphism --- */
 #card {
-  background: #243856;  /* fallback for old browsers */
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  transition: all 0.3s ease;
+}
 
+#card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Scrollbar Personalizada (Opcional pero recomendado) --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 5px;
+  border: 2px solid var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-purple);
+}
+
+/* --- Media Queries Optimizadas --- */
+@media (max-width: 768px) {
+  .home__img {
+    max-width: 320px;
+  }
+  
+  h1 {
+    letter-spacing: -0.05em;
+  }
 }
