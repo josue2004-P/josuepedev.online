@@ -1,68 +1,96 @@
 import {
-  IconBrandGithubFilled,
+  IconBrandGithub,
   IconBrandLinkedin,
   IconBrandWhatsapp,
   IconPhone,
+  IconMail,
+  IconSend
 } from "@tabler/icons-react";
-import { IconMail } from "@tabler/icons-react";
 
 export default function Contact() {
+  const contactoInfo = [
+    {
+      icon: <IconMail size={32} />,
+      label: "Email",
+      value: "josueperezeulogio03@gmail.com",
+      link: "mailto:josueperezeulogio03@gmail.com",
+      color: "hover:text-red-400"
+    },
+    {
+      icon: <IconBrandWhatsapp size={32} />,
+      label: "WhatsApp",
+      value: "284 - 102 - 2581",
+      link: "https://wa.me/522841022581",
+      color: "hover:text-green-400"
+    },
+    {
+      icon: <IconBrandLinkedin size={32} />,
+      label: "LinkedIn",
+      value: "Josue Perez",
+      link: "https://www.linkedin.com/in/josuepedev",
+      color: "hover:text-blue-400"
+    },
+    {
+      icon: <IconBrandGithub size={32} />,
+      label: "GitHub",
+      value: "josue2004-P",
+      link: "https://github.com/josue2004-P",
+      color: "hover:text-purple-400"
+    }
+  ];
+
   return (
-    <div id="contact" className="relative  z-10 py-10">
-      <div className="">
-        <section className="mb-32">
-          <div className="relative h-[300px] overflow-hidden bg-[url('https://mdbcdn.b-cdn.net/img/new/textures/full/171.jpg')] bg-cover bg-[50%] bg-no-repeat"></div>
-          <div className=" flex justify-center px-6 md:px-12">
-            <div
-              className="-mt-[100px] block rounded-lg px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] md:px-12 md:py-16"
-              id="testimonios1"
-            >
-              <div className=" grid gap-x-6 md:grid-cols-2 lg:grid-cols-5">
-                <div className="mx-auto mb-12 text-center lg:mb-0">
-                  <div className="flex justify-center">
-                    <IconMail className="mb-4 text-titulo" size={35} />
-                  </div>
-                  <h6 className="font-medium text-texto">
-                    josueperezeulogio3@gmail.com
-                  </h6>
-                </div>
-                <div className="mx-auto mb-12 text-center lg:mb-0">
-                  <div className="flex justify-center">
-                    <IconPhone className="mb-4 text-titulo " size={35} />
-                  </div>
-                  <h6 className="font-medium text-texto">284 - 102 - 2581</h6>
-                </div>
-                <div className="mx-auto mb-12 text-center lg:mb-0">
-                  <div className="flex justify-center">
-                    <IconBrandWhatsapp className="mb-4 text-titulo " size={35} />
-                  </div>
-                  <h6 className="font-medium text-texto">284 - 102 - 2581</h6>
-                </div>
-                <div className="mx-auto mb-6 text-center md:mb-0">
-                  <div className="flex justify-center">
-                    <IconBrandLinkedin className="mb-4 text-titulo" size={35} />
-                  </div>
-                  <a href="https://www.linkedin.com/in/josuepedev" className="font-medium text-texto  hover:text-gray-400">Josue Perez</a>
-                </div>
-                <div className="mx-auto text-center">
-                  <div className="flex justify-center">
-                    <IconBrandGithubFilled
-                      className="mb-4 text-texto"
-                      size={35}
-                    />
-                  </div>
-                  <a
-                    href="https://github.com/josue2004-P"
-                    className="font-medium text-texto hover:text-gray-400"
-                  >
-                    josue2004-P
-                  </a>
-                </div>
-              </div>
-            </div>
+    <section id="contact" className="relative z-10 py-24 px-6 lg:px-12">
+      <div className="mx-auto max-w-screen-xl">
+        
+        {/* Encabezado de Sección */}
+        <div className="mb-16 text-center">
+          <div className="inline-flex items-center gap-2 mb-4 text-purple-400 font-mono text-sm tracking-widest uppercase">
+            <IconSend size={20} />
+            <span>¿Listo para empezar?</span>
           </div>
-        </section>
+          <h2 className="text-4xl font-black text-white md:text-6xl">
+            Ponte en <span className="text-purple-500 text-6xl">Contacto.</span>
+          </h2>
+          <p className="mt-6 text-gray-400 max-w-xl mx-auto">
+            Estoy disponible para nuevos proyectos o colaboraciones. ¡Hablemos sobre tu próxima idea!
+          </p>
+        </div>
+
+        {/* Grid de Contacto Estilo Glassmorphism */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {contactoInfo.map((item, index) => (
+            <a
+              key={index}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              id="card"
+              className={`group flex flex-col items-center justify-center p-8 text-center transition-all duration-300 hover:-translate-y-2 ${item.color}`}
+            >
+              <div className="mb-4 text-gray-400 transition-colors group-hover:text-inherit">
+                {item.icon}
+              </div>
+              <span className="mb-1 text-xs font-bold uppercase tracking-widest text-gray-500">
+                {item.label}
+              </span>
+              <h6 className="text-sm font-medium text-white truncate w-full">
+                {item.value}
+              </h6>
+            </a>
+          ))}
+        </div>
+
+        {/* Footer de la sección */}
+        <div className="mt-20 border-t border-white/5 pt-10 text-center">
+          <p className="text-gray-500 text-sm italic">
+            "Transformando ideas complejas en soluciones digitales elegantes."
+          </p>
+        </div>
       </div>
-    </div>
+
+      {/* Decoración de fondo */}
+      <div className="absolute left-1/2 top-1/2 -z-10 h-64 w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-600/5 blur-[120px]" />
+    </section>
   );
 }

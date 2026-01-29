@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import "../css/home.css";
 
 import Navbar from "../components/Navbar";
