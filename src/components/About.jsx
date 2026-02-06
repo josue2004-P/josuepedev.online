@@ -27,29 +27,29 @@ export default function About() {
           <div className="space-y-6 text-lg text-gray-400 leading-relaxed">
             <p>
               Soy <span className="text-white font-bold">Josue Perez Eulogio</span>, 
-              desarrollador Frontend apasionado por crear interfaces que no solo se vean bien, sino que funcionen a la perfección. 
+              <span className="text-purple-300"> Desarrollador Fullstack</span> apasionado por construir soluciones robustas y escalables, 
+              desde la arquitectura del backend hasta interfaces de usuario de alto impacto. 
               Actualmente curso la Licenciatura en Sistemas Computacionales.
             </p>
 
             <div className="relative border-l-2 border-purple-500/30 pl-6 py-2">
               <p>
                 Cuento con más de 
-                <span className="text-white font-bold mx-1 text-xl">dos años de experiencia</span> 
-                transformando ideas en soluciones digitales efectivas, utilizando el ecosistema de JavaScript y frameworks modernos.
+                <span className="text-white font-bold mx-1 text-xl">tres años de experiencia</span> 
+                dominando el ecosistema de JavaScript, integración de bases de datos y despliegue en entornos de producción.
               </p>
             </div>
 
             <p>
               Mi enfoque está en el <span className="text-purple-300">aprendizaje continuo</span>. 
-              Me considero un eterno estudiante de la tecnología, siempre buscando aplicar nuevas metodologías de manera innovadora 
-              en cada proyecto en el que me involucro.
+              Me considero un eterno estudiante de la tecnología, capaz de conectar las necesidades del negocio con infraestructuras digitales eficientes e innovadoras.
             </p>
           </div>
 
           {/* Mini Stats o Badges */}
           <div className="mt-10 flex flex-wrap gap-4">
              <div className="flex flex-col">
-                <span className="text-2xl font-black text-white">2+</span>
+                <span className="text-2xl font-black text-white">3+</span>
                 <span className="text-xs uppercase text-gray-500 tracking-tighter">Años exp.</span>
              </div>
              <div className="h-10 w-[1px] bg-white/10 mx-2"></div>

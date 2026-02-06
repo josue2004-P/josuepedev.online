@@ -15,25 +15,33 @@ export default function Works() {
       title: "Sistema de Laboratorio",
       description: "CRUD completo para la gestión de análisis clínicos en 'La Piedad'. Incluye reportes automáticos en PDF y manejo de usuarios.",
       tags: ["Laravel", "Livewire", "PHP"],
-      link: "#",
+      link: "https://labpiedad.altamardev.com/",
       repo: "#",
-      image: "/img/lab-project.png" 
+      image: "/work1.png" 
     },
     {
       title: "Altamar Comunicación",
       description: "Landing page corporativa para servicios de desarrollo y comunicación marítima. Diseño responsivo y estética profesional.",
-      tags: ["React", "Vite", "Tailwind"],
-      link: "https://dasoftwarer.netlify.app/",
+      tags: ["Laravel", "Livewire", "PHP"],
+      link: "https://altamardev.com/",
       repo: "#",
-      image: "/work1.png"
+      image: "/work2.png"
     },
     {
-      title: "Reparacel Demo",
-      description: "Sistema de gestión para servicios técnicos móviles. Control de inventario, clientes y estados de reparación.",
-      tags: ["React", "Redux", "Node.js"],
-      link: "https://reparacel.netlify.app/",
+      title: "Autotransportes Careco",
+      description: "Plataforma corporativa para gestión de logística y transporte. Incluye secciones de servicios, contacto y optimización de carga de recursos.",
+      tags: ["Laravel", "Livewire", "Tailwind CSS"],
+      link: "https://transportescareco.com/", // URL basada en el nombre de la empresa
       repo: "#",
-      image: "/reparacel.png"
+      image: "/work4.png"
+    },
+    {
+      title: "Colossus",
+      description: "Sistema de administración interna y documentación técnica para servicios industriales. Enfoque en robustez y eficiencia de datos.",
+      tags: ["Laravel", "Livewire", "Tailwind CSS"],
+      link: "https://collosuscrane.com/",
+      repo: "#",
+      image: "/work3.png"
     }
   ];
 

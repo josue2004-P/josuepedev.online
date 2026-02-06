@@ -40,7 +40,7 @@ export default function Hero() {
             Hola, soy <br />
             <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]">
               <Typewriter
-                words={["Josue.", "Front-end.", "Creative."]}
+                words={["Josue.", "Fullstack.", "Developer."]}
                 loop={0}
                 cursor
                 cursorStyle="_"
@@ -118,7 +118,7 @@ export default function Hero() {
 
               <div className="grid grid-cols-2 gap-4 border-t border-white/10 pt-6">
                 <div className="text-center lg:text-left">
-                  <p className="text-2xl font-black text-white">+2 años</p>
+                  <p className="text-2xl font-black text-white">+3 años</p>
                   <p className="text-[10px] uppercase tracking-widest text-gray-500">Experiencia</p>
                 </div>
                 <div className="text-center lg:text-left border-l border-white/10 pl-4">

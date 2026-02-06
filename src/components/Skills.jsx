@@ -60,7 +60,7 @@ export default function Skills() {
             Stack <span className="text-purple-500">Tecnológico</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400">
-            Con más de <span className="text-white">dos años de trayectoria</span>, me especializo en el ecosistema de 
+            Con más de <span className="text-white">tres años de trayectoria</span>, me especializo en el ecosistema de 
             <span className="text-white"> PHP y Laravel</span> para soluciones robustas, complementado con 
             interfaces modernas en <span className="text-white">React y Tailwind</span>.
           </p>
