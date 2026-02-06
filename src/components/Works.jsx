@@ -13,7 +13,7 @@ export default function Works() {
   const proyectos = [
     {
       title: "Sistema de Laboratorio",
-      description: "CRUD completo para la gestión de análisis clínicos en 'La Piedad'. Incluye reportes automáticos en PDF y manejo de usuarios.",
+      description: "CRUD completo para la gestión de análisis clínicos en 'Piedad'. Incluye reportes automáticos en PDF y manejo de usuarios.",
       tags: ["Laravel", "Livewire", "PHP"],
       link: "https://labpiedad.altamardev.com/",
       repo: "#",
